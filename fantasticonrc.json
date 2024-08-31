@@ -1,0 +1,21 @@
+{
+  "inputDir": "./src/shared/assets/icons/formated",
+  "outputDir": "./public/fonts/icons",
+  "fontTypes": ["woff", "woff2"],
+  "assetTypes": ["ts", "css"],
+  "fontsUrl": "/fonts/icons",
+  "normalize": true,
+  "formatOptions": {
+    "json": {
+      "indent": 2
+    },
+    "ts": {
+      "types": ["literalId"],
+      "singleQuotes": true
+    }
+  },
+  "pathOptions": {
+    "ts": "./src/shared/lib/types/icons.ts",
+    "css": "./src/app/styles/utils/icons.scss"
+  }
+}

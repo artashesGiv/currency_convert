@@ -1,7 +1,9 @@
-@import './utils/utils';
 @import './utils/reset';
 @import './utils/common';
+@import './utils/vars/vars';
+@import './utils/mixins';
 
 @import './utils/fonts';
+@import './utils/icons';
 
 @import './utils/animations';

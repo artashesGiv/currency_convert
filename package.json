@@ -10,7 +10,9 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "format-icons": "node src/shared/utils/npm/formattingIcons.js",
+    "icons": "npm run format-icons && fantasticon"
   },
   "dependencies": {
     "pinia": "^2.1.7",
@@ -29,8 +31,10 @@
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
     "npm-run-all2": "^6.2.0",
+    "oslllo-svg-fixer": "^5.0.0",
     "prettier": "^3.2.5",
     "sass": "^1.77.8",
+    "sass-loader": "^16.0.1",
     "typescript": "~5.4.0",
     "vite": "^5.3.1",
     "vite-plugin-vue-devtools": "^7.3.1",

@@ -1,10 +1,12 @@
 <template>
   <header>
     <router-link :to="{ name: Routes.HOME }">
-      {{ usePageData(Routes.HOME).navigate }}
+      {{ usePageData(Routes.HOME)?.navigate }}
+      <icon-base name="convert" />
     </router-link>
     <router-link :to="{ name: Routes.CONVERT }">
-      {{ usePageData(Routes.CONVERT).navigate }}
+      {{ usePageData(Routes.CONVERT)?.navigate }}
+      <icon-base name="convert" />
     </router-link>
   </header>
   <main>
