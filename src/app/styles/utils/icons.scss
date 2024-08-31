@@ -1,7 +1,7 @@
 @font-face {
     font-family: "icons";
-    src: url("/fonts/icons/icons.woff?ed2786be86c8c90637c44dc96b5f00a6") format("woff"),
-url("/fonts/icons/icons.woff2?ed2786be86c8c90637c44dc96b5f00a6") format("woff2");
+    src: url("/fonts/icons/icons.woff?ead5a451fded62008a92bad0da4af082") format("woff"),
+url("/fonts/icons/icons.woff2?ead5a451fded62008a92bad0da4af082") format("woff2");
 }
 
 i[class^="icon-"]:before, i[class*=" icon-"]:before {
@@ -20,4 +20,7 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 }
 .icon-home:before {
     content: "\f102";
+}
+.icon-chevron-down:before {
+    content: "\f103";
 }

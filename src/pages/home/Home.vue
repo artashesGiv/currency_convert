@@ -68,5 +68,7 @@ const onClick = () => {
 <style scoped lang="scss">
 .home {
   @include column(10px);
+
+  padding-top: 50px;
 }
 </style>

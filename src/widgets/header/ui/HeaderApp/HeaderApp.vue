@@ -13,6 +13,7 @@
         @click="onNavigate(item.name)"
       />
     </div>
+    <current-currency />
   </header>
 </template>
 <script setup lang="ts">
@@ -24,6 +25,7 @@ import {
   usePageData,
 } from '@/shared'
 import { useRouter } from 'vue-router'
+import { CurrentCurrency } from '@/entities'
 
 export type HeaderAppProps = {}
 
@@ -66,6 +68,7 @@ const onNavigate = (name: Routes) => {
   height: 120px;
   border-radius: 0 0 20px 20px;
   background-color: var(--black-color-3);
+  box-shadow: 0 4px 10px 0 rgb(165 163 174 / 45%);
 
   &__logo {
     border: 3px solid var(--brand-color);

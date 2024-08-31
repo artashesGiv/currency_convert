@@ -1,3 +1,4 @@
 export type IconsId =
   | 'switch'
-  | 'home';
+  | 'home'
+  | 'chevron-down';
