@@ -1,0 +1,16 @@
+body {
+  font-size: 14px;
+  color: var(--dark-main);
+  font-family: $mainFontFamily, sans-serif;
+  font-weight: 400;
+  background-color: var(--white);
+  overflow-y: hidden;
+  position: relative;
+}
+
+#app {
+  height: 100vh;
+}
+html {
+  font-size: 12px;
+}
