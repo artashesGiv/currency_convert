@@ -134,7 +134,7 @@ const onSelect = (value: Option['id']) => {
     width: 100%;
     border-radius: 8px;
     padding: 8px;
-    box-shadow: 0 4px 10px 0 rgb(165 163 174 / 45%);
+    box-shadow: var(--base-shadow);
     background-color: var(--black-color-3);
   }
 

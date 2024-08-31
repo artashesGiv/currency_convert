@@ -1,1 +1,2 @@
-export * from './current-currency'
+export * from './currency-current'
+export * from './currency-rate'

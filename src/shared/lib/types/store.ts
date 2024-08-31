@@ -1,3 +1,4 @@
 export enum Stores {
-  CURRENT_CURRENCY = 'current-currency',
+  CURRENCY_CURRENT = 'currency-current',
+  CURRENCY_RATE = 'currency-rate',
 }

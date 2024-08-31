@@ -29,7 +29,7 @@
 import { computed } from 'vue'
 
 export type SpinnerProps = {
-  size?: 's'
+  size?: 's' | 'xxl'
   view?: 'dark' | 'light'
 }
 
@@ -80,6 +80,11 @@ const svgAttrs = computed(() => {
     &-s {
       width: 20px;
       height: 20px;
+    }
+
+    &-xxl {
+      width: 100px;
+      height: 100px;
     }
   }
 }

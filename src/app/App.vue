@@ -13,3 +13,9 @@
 import { RouterView } from 'vue-router'
 import { HeaderApp } from '@/widgets'
 </script>
+
+<style scoped lang="scss">
+main {
+  height: calc(100% - var(--header-height));
+}
+</style>
