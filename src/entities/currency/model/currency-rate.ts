@@ -1,18 +1,16 @@
 import { baseApi, Stores } from '@/shared'
 import { defineStore, storeToRefs } from 'pinia'
 import { computed, ref } from 'vue'
-import type { CurrencyCodes } from '../lib'
+import type { CurrencyCodes, RateData, RateDataKey } from '../lib'
 import { useCurrentCurrencyStore } from './'
-
-type RateDataKey = `${CurrencyCodes}-${CurrencyCodes}`
-type RateData = Record<RateDataKey, number>
+import { useCurrency } from '@/entities/currency/lib/hooks'
 
 export const useCurrencyRateStore = defineStore(Stores.CURRENCY_RATE, () => {
   const isLoading = ref(true)
   const rateData = ref<Maybe<RateData>>(null)
 
   const { currentCurrency } = storeToRefs(useCurrentCurrencyStore())
-  const { list, allCurrenciesId } = useCurrentCurrencyStore()
+  const { allCurrenciesId } = useCurrency()
 
   const onLoadRateData = async () => {
     try {
@@ -42,7 +40,7 @@ export const useCurrencyRateStore = defineStore(Stores.CURRENCY_RATE, () => {
           })
           .map(([key, value]) => [
             currencyRateKeySplit(key as RateDataKey, 1),
-            value,
+            value.toFixed(2),
           ]),
       )
     }

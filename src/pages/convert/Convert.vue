@@ -1,12 +1,19 @@
 <template>
-  <page-layout>{{ title }}</page-layout>
+  <page-layout class="convert">
+    <currency-convert-card />
+  </page-layout>
 </template>
 
 <script setup lang="ts">
-import { usePageData } from '@/shared'
 import { PageLayout } from '@/widgets'
-
-const { title } = usePageData()
+import { CurrencyConvertCard } from '@/entities'
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.convert {
+  @include column;
+
+  align-items: center;
+  justify-content: center;
+}
+</style>

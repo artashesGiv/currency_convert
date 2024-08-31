@@ -1,13 +1,13 @@
 <template>
-  <div :class="['select', { 'is-open': isOpen }]">
+  <div :class="classes">
     <div
       v-click-outside="closeOptions"
       class="select__field"
       @click="toggleSelect(!isOpen)"
     >
       <div class="select__content">
-        <span v-if="!isValue && placeholder" class="select__placeholder">
-          {{ placeholder }}
+        <span v-if="!isValue" class="select__placeholder">
+          {{ placeholder || '' }}
         </span>
         <span v-else class="select__value">
           {{ getOptionText(modelValue) }}
@@ -43,6 +43,7 @@ export type SelectBaseProps = {
   options: Option[]
   placeholder?: string
   isDisabled?: boolean
+  isNonRest?: boolean
 }
 
 type SelectEmit = {
@@ -53,6 +54,12 @@ const props = defineProps<SelectBaseProps>()
 const emit = defineEmits<SelectEmit>()
 
 const isOpen = ref(false)
+
+const classes = computed(() => [
+  'select',
+  { 'is-open': isOpen },
+  { 'is-disabled': props.isDisabled },
+])
 
 const isValue = computed(() => {
   return props.modelValue !== null && props.modelValue !== undefined
@@ -74,7 +81,7 @@ const toggleSelect = (value: boolean) => {
 const closeOptions = () => toggleSelect(false)
 
 const onSelect = (value: Option['id']) => {
-  if (value === props.modelValue) {
+  if (value === props.modelValue && !props.isNonRest) {
     emit('update:modelValue', null)
   } else {
     emit('update:modelValue', value)
@@ -90,6 +97,7 @@ const onSelect = (value: Option['id']) => {
 
   position: relative;
   width: 100%;
+  transition: var(--transition-base);
 
   &__placeholder {
     color: var(--gray-color-1);
@@ -134,8 +142,9 @@ const onSelect = (value: Option['id']) => {
     width: 100%;
     border-radius: 8px;
     padding: 8px;
-    box-shadow: var(--base-shadow);
+    border: 1.5px solid var(--gray-color-2);
     background-color: var(--black-color-3);
+    z-index: 3;
   }
 
   &__item {
@@ -167,6 +176,10 @@ const onSelect = (value: Option['id']) => {
     #{$b}__icon {
       transform: rotate(180deg);
     }
+  }
+
+  &.is-disabled {
+    @include isDisabled;
   }
 }
 </style>
