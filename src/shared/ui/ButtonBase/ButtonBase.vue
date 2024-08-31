@@ -79,13 +79,12 @@ const onCLick = (event: Event) => {
     }
 
     &-secondary {
-      border: 1px solid var(--primary-color);
-      background: var(--white-color);
-      color: var(--primary-color);
-      padding: 0 19px;
+      background: var(--black-color-3);
+      color: var(--gray-color-2);
 
       &:hover {
-        box-shadow: 0 4px 14px 0 var(--box-shadow-color);
+        color: var(--brand-color-light);
+        box-shadow: 0 0 0 1px var(--brand-color-light);
       }
     }
   }

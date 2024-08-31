@@ -1,43 +1,51 @@
 <template>
   <div class="home">
     <div>{{ title }}</div>
-    <button-base text="text" icon="convert" @click="onClick" />
-    <button-base text="text" icon="convert" is-disabled @click="onClick" />
+    <button-base text="text" icon="switch" @click="onClick" />
+    <button-base text="text" icon="switch" view="secondary" @click="onClick" />
+    <button-base text="text" icon="switch" is-disabled @click="onClick" />
     <button-base
       text="text"
-      icon="convert"
+      icon="switch"
       is-disabled
       size="s"
       @click="onClick"
     />
     <button-base
       text="text"
-      icon="convert"
+      icon="switch"
       is-disabled
       :is-loading="isLoading"
       @click="onClick"
     />
-    <button-base text="text" icon="convert" is-rounded @click="onClick" />
+    <button-base text="text" icon="switch" is-rounded @click="onClick" />
     <button-base
       text="text"
-      icon="convert"
+      icon="switch"
       is-rounded
       :is-loading="isLoading"
       @click="onClick"
     />
-    <button-base icon="convert" @click="onClick" />
-    <button-base icon="convert" :is-loading="isLoading" @click="onClick" />
+    <button-base icon="switch" @click="onClick" />
+    <button-base icon="switch" :is-loading="isLoading" @click="onClick" />
     <button-base
-      icon="convert"
+      icon="switch"
       :is-loading="isLoading"
       size="s"
       @click="onClick"
     />
-    <button-base icon="convert" is-rounded @click="onClick" />
-    <button-base icon="convert" is-rounded @click="onClick" />
-    <button-base icon="convert" is-rounded size="s" @click="onClick" />
+    <button-base icon="switch" is-rounded @click="onClick" />
+    <button-base icon="switch" is-rounded @click="onClick" />
+    <button-base icon="switch" is-rounded size="s" @click="onClick" />
     <button-base
-      icon="convert"
+      icon="switch"
+      is-rounded
+      size="s"
+      view="secondary"
+      @click="onClick"
+    />
+    <button-base
+      icon="switch"
       is-rounded
       :is-loading="isLoading"
       @click="onClick"

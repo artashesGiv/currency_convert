@@ -1,7 +1,7 @@
 @font-face {
     font-family: "icons";
-    src: url("/fonts/icons/icons.woff?10476906e2dc7d9a4f025e0e43d5f255") format("woff"),
-url("/fonts/icons/icons.woff2?10476906e2dc7d9a4f025e0e43d5f255") format("woff2");
+    src: url("/fonts/icons/icons.woff?ed2786be86c8c90637c44dc96b5f00a6") format("woff"),
+url("/fonts/icons/icons.woff2?ed2786be86c8c90637c44dc96b5f00a6") format("woff2");
 }
 
 i[class^="icon-"]:before, i[class*=" icon-"]:before {
@@ -15,6 +15,9 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-convert:before {
+.icon-switch:before {
     content: "\f101";
+}
+.icon-home:before {
+    content: "\f102";
 }

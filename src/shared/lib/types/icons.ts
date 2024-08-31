@@ -1,2 +1,3 @@
 export type IconsId =
-  | 'convert';
+  | 'switch'
+  | 'home';
