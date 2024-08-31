@@ -1,11 +1,11 @@
 <template>
-  <div>{{ data.title }}</div>
+  <div>{{ title }}</div>
 </template>
 
 <script setup lang="ts">
 import { usePageData } from '@/shared'
 
-const data = usePageData()
+const { title } = usePageData()
 </script>
 
 <style scoped></style>

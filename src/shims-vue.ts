@@ -3,7 +3,7 @@ export {}
 declare module 'vue-router' {
   interface RouteMeta {
     middleware?: unknown
-    data?: {
+    data: {
       title: string
       navigate?: string
     }

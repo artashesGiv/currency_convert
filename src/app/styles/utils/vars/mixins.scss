@@ -48,3 +48,9 @@
   flex-direction: row;
   gap: $gap;
 }
+
+@mixin isDisabled() {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
