@@ -1,6 +1,6 @@
 import { defineStore, storeToRefs } from 'pinia'
 import { Stores } from '@/shared'
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, type Ref, ref, watch } from 'vue'
 import { type RateDataKey, useCurrency } from '../lib'
 import { useCurrencyRateStore } from './'
 
@@ -17,30 +17,39 @@ export const useCurrencyConvertStore = defineStore(
     const fromValue = ref<Maybe<number>>(null)
     const toValue = ref<Maybe<number>>(null)
 
-    const convertFromValue = () => {
-      const key = `${toCurrency.value}-${fromCurrency.value}` as RateDataKey
+    // Общая функция для конвертации значений
+    const convertValue = (
+      sourceValue: Ref<Maybe<number>>,
+      targetValue: Ref<Maybe<number>>,
+      sourceCurrency: Ref<string>,
+      targetCurrency: Ref<string>,
+    ) => {
+      const key =
+        `${sourceCurrency.value}-${targetCurrency.value}` as RateDataKey
 
       if (rateData.value) {
-        if (toValue.value) {
-          fromValue.value = +(rateData.value[key] * toValue.value).toFixed(2)
+        if (sourceValue.value) {
+          if (sourceCurrency.value === targetCurrency.value) {
+            targetValue.value = sourceValue.value
+          } else {
+            targetValue.value = +(
+              rateData.value[key] * sourceValue.value
+            ).toFixed(2)
+          }
         } else {
-          fromValue.value = null
+          targetValue.value = null
         }
       }
     }
 
-    const convertToValue = () => {
-      const key = `${fromCurrency.value}-${toCurrency.value}` as RateDataKey
+    // Используем общую функцию для конвертации из toCurrency в fromCurrency
+    const convertFromValue = () => {
+      convertValue(toValue, fromValue, toCurrency, fromCurrency)
+    }
 
-      if (rateData.value) {
-        if (fromValue.value) {
-          toValue.value = +(
-            rateData.value[key] * (fromValue.value || 1)
-          ).toFixed(2)
-        } else {
-          toValue.value = null
-        }
-      }
+    // Используем общую функцию для конвертации из fromCurrency в toCurrency
+    const convertToValue = () => {
+      convertValue(fromValue, toValue, fromCurrency, toCurrency)
     }
 
     watch(
