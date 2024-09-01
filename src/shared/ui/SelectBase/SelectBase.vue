@@ -57,7 +57,7 @@ const isOpen = ref(false)
 
 const classes = computed(() => [
   'select',
-  { 'is-open': isOpen },
+  { 'is-open': isOpen.value },
   { 'is-disabled': props.isDisabled },
 ])
 
