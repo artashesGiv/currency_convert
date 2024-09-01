@@ -1,4 +1,7 @@
 {
+  "compilerOptions": {
+    "types": ["vue"]
+  },
   "files": [],
   "references": [
     {
