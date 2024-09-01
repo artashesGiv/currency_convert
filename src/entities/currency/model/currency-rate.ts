@@ -14,7 +14,7 @@ export const useCurrencyRateStore = defineStore(Stores.CURRENCY_RATE, () => {
 
   const onLoadRateData = async () => {
     try {
-      const { data } = await baseApi.get<RateData>('')
+      const { data } = await baseApi.get<RateData>('currency')
 
       rateData.value = Object.fromEntries(
         Object.entries(data).filter(([key, _value]) => {
