@@ -73,6 +73,8 @@ const onNavigate = (name: Routes) => {
     border: 3px solid var(--brand-color);
     border-radius: 50%;
     padding: 10px;
+    width: 80px;
+    height: 80px;
 
     i {
       font-size: 50px;
